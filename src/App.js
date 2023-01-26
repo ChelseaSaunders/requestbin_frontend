@@ -8,6 +8,7 @@ import requestService from './services/requestService';
 
 const App = () => {
   const [endpoints, setEndpoints] = useState([]);
+  const [bins, setBins] = useState([]);
 
   useEffect(() => {
     requestService
@@ -17,23 +18,20 @@ const App = () => {
       });
   }, []);
 
-  // Are we using this? (Honestly don't remember, but commented it out
-  // and page still works)
-  // const getEndpoints = async () => {
-  //   const endpoints = await requestService.getAllEndpoints()
-  //   console.log("endpoint", endpoints)
-  //   console.log("type", typeof endpoints)
-  //   setEndpoints(endpoints)
-  //   return
-  // }
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home createEndpoint={requestService.createNewEndpoint} endpoints={endpoints} />} />
+        <Route path="/"
+          element={<Home
+            createEndpoint={requestService.createNewEndpoint}
+            endpoints={endpoints}
+            createBin={requestService.createNewBin}
+            bins={bins}
+          />}
+        />
         <Route path="/:path" element={<RequestsPage />} />
       </Routes>
-  </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

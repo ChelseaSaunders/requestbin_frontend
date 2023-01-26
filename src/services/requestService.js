@@ -7,6 +7,14 @@ const getAllEndpoints = () => {
   return request.then(response => response.data);
 };
 
+const getAllBins = () => {
+  const request = axios.get('http://localhost:4000/bin')
+  return request.then(response => response.data);
+}
+
+const createNewBin = () => {
+  // fix me
+}
 const createNewEndpoint = async (endpoint) => {
   // const response = await axios.post(baseUrl)
   const params = { endpoint };

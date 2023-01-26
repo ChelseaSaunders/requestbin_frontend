@@ -1,15 +1,15 @@
 import EndpointForm from './endpointform'
 import ListEndpoints from './ListEndpoints'
+import ListBins from './ListBins'
 
-const Home = ({ createEndpoint, endpoints }) => {
+const Home = ({ createEndpoint, endpoints, createBin, bins }) => {
   return (
     <div>
-      {
-      //a working title
-      }
-      <h1>Welcome To Our Request Bin, Wooooo!!!  GO TEAM 4!!!! WOOOO!!!</h1>
+      <h1>Dumpster of Disappointment</h1>
+      <h2>Welcome To Our Request Bin, Wooooo!!!  GO TEAM 4!!!! WOOOO!!!</h2>
       <EndpointForm createEndpoint={createEndpoint} />
       <ListEndpoints endpoints={endpoints} />
+      <ListBins bins={bins} />
   </div>
   )
 };
