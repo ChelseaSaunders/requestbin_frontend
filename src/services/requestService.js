@@ -47,6 +47,8 @@ const getAllRequests = (endpoint) => {
 const requestService = { getAllEndpoints,
                          createNewEndpoint,
                          getAllRequests,
+                         getAllBins,
+                         createNewBin,
                         };
 
 export default requestService;

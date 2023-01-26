@@ -18,6 +18,15 @@ const App = () => {
       });
   }, []);
 
+  useEffect(() => {
+    requestService
+      .getAllBins()
+      .then(bins => {
+        console.log("bins", bins)
+        setBins(bins);
+      });
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
