@@ -1,16 +1,18 @@
 import axios from 'axios';
 //fix me
 const  baseUrl = 'http://localhost:4000/bin/1';
+const testBaseURL = 'http://localhost:4000/';
 
 const getAllEndpoints = () => {
   const request = axios.get(baseUrl);
   return request.then(response => response.data);
 };
 
-// const getAllEndpointsForBin = (binID) => {
-//   const request = axios.get(baseUrl);
-//   return request.then(response => response.data);
-// };
+const getAllEndpointsForBin = (binID) => {
+  // const request = axios.get(testBaseURL+"bin/"+ binID);
+  const request = axios.get(baseUrl);
+  return request.then(response => response.data);
+};
 
 const getAllBins = () => {
   const request = axios.get('http://localhost:4000/bin')
@@ -54,6 +56,7 @@ const requestService = { getAllEndpoints,
                          getAllRequests,
                          getAllBins,
                          createNewBin,
+                         getAllEndpointsForBin,
                         };
 
 export default requestService;

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import './styles.css';
 import EndpointForm from './endpointform'
 import ListEndpoints from './ListEndpoints'
+import requestService from '../services/requestService';
 
 function BinPage({createEndpoint, endpoints}) {
   const [requests, setRequests] = useState([]);
@@ -10,6 +11,34 @@ function BinPage({createEndpoint, endpoints}) {
   const [error, setError] = useState(null);
 
   const { binNum } = useParams();
+  // useEffect( () => {
+  //   async () => {
+  //     try {
+  //       let data = await requestService.getAllEndpointsForBin(binNum);
+  //       setRequests(data);
+  //       setLoading(false);
+  //     } catch (err) {
+  //       setError(err);
+  //       setLoading(false);
+  //     }
+  //
+  //   }
+  // })
+
+  // useEffect( () => {
+  //   requestService
+  //     .getAllEndpointsForBin(binNum)
+  //     .then( (res) => res.json())
+  //     .then((data) => {
+  //       setRequests(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       setError(err);
+  //       setLoading(false);
+  //     });
+  // })
+
   // useEffect(() => {
   //   fetch(`http://localhost:4000/bin/1/endpoint/${path}`)
   //     .then((res) => res.json())
