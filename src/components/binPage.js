@@ -2,25 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './styles.css';
 
-//function RequestsPage({ path }) {
-function RequestsPage() {
+function BinPage() {
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const { path } = useParams();
-  useEffect(() => {
-    fetch(`http://localhost:4000/bin/1/endpoint/${path}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setRequests(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
-  }, [path]);
+  const { binNum } = useParams();
+  // useEffect(() => {
+  //   fetch(`http://localhost:4000/bin/1/endpoint/${path}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setRequests(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       setError(err);
+  //       setLoading(false);
+  //     });
+  // }, [path]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -61,4 +60,4 @@ function RequestsPage() {
 
 }
 
-export default RequestsPage;
+export default BinPage;

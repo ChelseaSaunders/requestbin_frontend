@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // components
 import Home from './components/Home';
 import RequestsPage from './components/viewrequests';
+import BinPage from './components/binPage';
 import requestService from './services/requestService';
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
             bins={bins}
           />}
         />
+        <Route path="/bin/:binnum" element={<BinPage />} />
         <Route path="/:path" element={<RequestsPage />} />
       </Routes>
     </BrowserRouter>

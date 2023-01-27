@@ -7,6 +7,11 @@ const getAllEndpoints = () => {
   return request.then(response => response.data);
 };
 
+// const getAllEndpointsForBin = (binID) => {
+//   const request = axios.get(baseUrl);
+//   return request.then(response => response.data);
+// };
+
 const getAllBins = () => {
   const request = axios.get('http://localhost:4000/bin')
   return request.then(response => response.data);

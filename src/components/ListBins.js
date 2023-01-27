@@ -6,7 +6,6 @@ const ListBins = ({ bins, paths }) => {
     <div>
       <h2>Existing Bins:</h2>
       <ul>
-
         {bins.map( (bin) => {
           // should change key to not reveal data structure
           return (
