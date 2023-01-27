@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './styles.css';
+import EndpointForm from './endpointform'
+import ListEndpoints from './ListEndpoints'
 
-function BinPage() {
+function BinPage({createEndpoint, endpoints}) {
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -30,32 +32,12 @@ function BinPage() {
   }
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Path</th>
-          <th>Headers</th>
-          <th>Body</th>
-        </tr>
-      </thead>
-      <tbody>
-        {requests.map((request) => (
-          <tr key={request.path}>
-            <td>{request.path}</td>
-            <td>
-              {Object.entries(JSON.parse(request.headers)).map(([key, value]) => (
-                <div key={key}>
-                  {key}: {value}
-                </div>
-              ))}
-            </td>
-            <td>
-              {request.body}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div>
+      <h1>Dumpster of Disappointment</h1>
+      <h2> Bin Number: {"FIX ME"} </h2>
+      <EndpointForm createEndpoint={createEndpoint} />
+      <ListEndpoints endpoints={endpoints} />
+    </div>
   );
 
 }

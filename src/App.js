@@ -39,7 +39,10 @@ const App = () => {
             bins={bins}
           />}
         />
-        <Route path="/bin/:binnum" element={<BinPage />} />
+        <Route path="/bin/:binnum" element={<BinPage
+          createEndpoint={requestService.createNewEndpoint}
+          endpoints={endpoints}
+        />} />
         <Route path="/:path" element={<RequestsPage />} />
       </Routes>
     </BrowserRouter>

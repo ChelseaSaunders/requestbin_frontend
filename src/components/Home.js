@@ -10,7 +10,7 @@ const Home = ({ createEndpoint, endpoints, createBin, bins }) => {
       <EndpointForm createEndpoint={createEndpoint} />
       <ListEndpoints endpoints={endpoints} />
       <ListBins bins={bins} />
-  </div>
+    </div>
   )
 };
 
